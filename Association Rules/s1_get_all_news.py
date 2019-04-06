@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-# news_crawler.py
+# step 1: s1_get_all_news.py
 
 import requests
 import time
@@ -24,7 +24,7 @@ class NewsLinkCrawler:
 			url = link.get_text()  #Get the text of each tag
 			if '/news/' in url:
 				self.pageurls.append(url)
-		f = open('newslink.txt', 'w')
+		f = open('data/all_news.txt', 'w')
 		f.write('\n'.join(self.pageurls))
 		f.close()		
 
