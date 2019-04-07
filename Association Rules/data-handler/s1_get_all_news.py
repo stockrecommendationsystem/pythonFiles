@@ -20,13 +20,13 @@ class NewsLinkCrawler:
 
 		soup = BeautifulSoup(html.text)  #Parse webpage by using BeautifulSoup
 		links = soup.select("urlset > url > loc")
-		for link in links:    
+		for link in links:
 			url = link.get_text()  #Get the text of each tag
 			if '/news/' in url:
 				self.pageurls.append(url)
-		f = open('data/all_news.txt', 'w')
+		f = open('./../data/all_news.txt', 'w')
 		f.write('\n'.join(self.pageurls))
-		f.close()		
+		f.close()
 
 def main():
 	url="https://www.investopedia.com/sitemap_1.xml" #Initial url for getting all page tags
